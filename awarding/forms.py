@@ -12,3 +12,9 @@ class UserRegisterForm(UserCreationForm):
         fields= ['username','email','password1','password2']
         
         help_texts = { 'username': None, 'password2': None, }
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('photo', 'title', 'url', 'description', 'technologies_used',)
