@@ -8,6 +8,8 @@ import random
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .forms import  UpdateUserForm, UpdateUserProfileForm, UserRegisterForm,PostForm,RatingForm
+from rest_framework import viewsets
+from .permissions import IsAdminOrReadOnly
 
 
 # Create your views here.
@@ -161,3 +163,27 @@ def search_project(request):
         posts = Post.objects.filter(title__icontains=title).all()
 
     return render(request, 'all-awards/search.html', {'posts': posts})
+
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly,)
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly,)
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    
+class RatingViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly,)
+    queryset = Rating.objects.all()
+    serializer_class = RatingSerializer
+    
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
