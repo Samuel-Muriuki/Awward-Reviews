@@ -4,13 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Post, Profile,Rating
-import random
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .forms import  UpdateUserForm, UpdateUserProfileForm, UserRegisterForm,PostForm,RatingForm
 from rest_framework import viewsets
 from .permissions import IsAdminOrReadOnly
 from .serializers import PostSerializer,ProfileSerializer, RatingSerializer
+import random
 
 
 # Create your views here.
