@@ -10,6 +10,7 @@ from rest_framework.views import APIView
 from .forms import  UpdateUserForm, UpdateUserProfileForm, UserRegisterForm,PostForm,RatingForm
 from rest_framework import viewsets
 from .permissions import IsAdminOrReadOnly
+from .serializers import PostSerializer,ProfileSerializer, RatingSerializer
 
 
 # Create your views here.
