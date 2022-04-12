@@ -46,7 +46,7 @@
 
         <div class="container pt-5">
             <div class="text-center">
-                <h1> <a href="{% url 'project' random_post.title %}" class="text-white">{{random_post.title|title}}</a>
+                <h1> <a href="{% url 'project' random_post.title %}" class="text-primary">{{random_post.title|title}}</a>
                 </h1>
                 <h5 class="pt-2">By <span><a href="{% url 'user_profile' random_post.user.username  %}"
                             class="text-primary">{{random_post.user.username|title}}</a></span></h5>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="card-footer">
                     <a href="{% url 'user_profile' post.user.username  %}"> 
-                        <img src="{{user.profile.profile_pic.url}}" alt="" class="rounded-circle user profile-img" height="30px">
+                        <img src="{{post.user.profile.profile_pic.url}}" alt="" class="rounded-circle user profile-img" height="30px">
                         {{post.user.username|title}}</a> <span style="float:right">{{post.upload_date|date}}</span>
                 </div>
             </div>

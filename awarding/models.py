@@ -10,7 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='profile')
     bio = models.TextField(max_length=400, blank=True)
     name = models.CharField(blank=True, max_length=120)
-    profile_pic = CloudinaryField('image', default='https://res.cloudinary.com/samm-gallery/image/upload/v1649731909/Ninja_vgvgam.png')
+    profile_pic = CloudinaryField('image', default='https://res.cloudinary.com/samm-gallery/image/upload/v1649751098/Ninja_fjh4xm.png')
     phone_number = PhoneField(max_length=15, blank=True)
     
     def __str__(self):
