@@ -30,3 +30,4 @@ urlpatterns = [
     path('api-token-auth/', obtain_auth_token),
     path('social-auth/',include('social_django.urls',namespace='social')),
 ]
+
