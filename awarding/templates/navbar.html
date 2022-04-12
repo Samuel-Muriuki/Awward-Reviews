@@ -25,12 +25,12 @@
             SITE!</a>
         </li>
         <li class="nav-item active">
-          <a href="/api" class=" btn btn-sm btn-primary site mr-2"> API</a>
+          <a href="/api/userprofiles/" class=" btn btn-sm btn-primary site mr-2"> API</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <img src="{{user.profile.profile_pic.url}}" alt="Profile Picture" class="rounded-circle user profile-img"></a>
+            <img src="{{user.profile.profile_pic.url}}" alt="Profile Picture" class="rounded-circle user profile-img" height="30px"></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a href="{%url 'profile' user.username%}" class="nav-link text-dark dropdown-item"><i
                 class="fas fa-user"></i> Profile</a>

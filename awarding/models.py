@@ -10,7 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='profile')
     bio = models.TextField(max_length=400, blank=True)
     name = models.CharField(blank=True, max_length=120)
-    profile_pic = CloudinaryField('image', default='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png')
+    profile_pic = CloudinaryField('image', default='https://res.cloudinary.com/samm-gallery/image/upload/v1649731909/Ninja_vgvgam.png')
     phone_number = PhoneField(max_length=15, blank=True)
     
     def __str__(self):
@@ -24,7 +24,7 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-
+        
 class Post(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=300)
